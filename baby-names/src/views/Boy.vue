@@ -1,6 +1,6 @@
 <template>
     <div>
-<h1>TEST TEST TWETST ARGSDFGBSD FG</h1>
+<h1>THE BOYS</h1>
     </div>
 </template>
 
@@ -12,6 +12,10 @@ async function getBoys(){
     let data = await response.json()
     babyNames.value = data.results
 }
+onMounted(() => {
+    getBoys()
+})
+
 
 </script>
 
