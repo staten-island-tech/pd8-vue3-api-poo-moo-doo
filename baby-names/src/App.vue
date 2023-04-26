@@ -8,8 +8,8 @@ import MostPopular from './views/MostPopular.vue'
 <template>
   <header></header>
   <Boy />
-  <MostPopular />
-  <RouterView />
+  <MostPopular/>
+  <RouterView/>
 </template>
 
 <style scoped>
