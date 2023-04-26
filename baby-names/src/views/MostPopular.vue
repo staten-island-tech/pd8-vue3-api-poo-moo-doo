@@ -1,6 +1,8 @@
-<template></template>
+<template>
+  <h1>MostPopular</h1>
+</template>
 
-<script setup>
+<!-- <script setup>
 import{ref, onMounted} from `vue`
 const babies = ref(``)
 async function getBabies(){
@@ -12,6 +14,6 @@ async function getBabies(){
 onMounted(()=>{
     getBabies()
 })
-</script>
+</script> -->
 
 <style scoped></style>

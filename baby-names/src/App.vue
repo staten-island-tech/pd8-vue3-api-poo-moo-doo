@@ -1,15 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import Boy from './views/Boy.vue'
+import MostPopular from './views/MostPopular.vue'
 </script>
 
 <template>
-  <header>
-   
-  </header>
-
-  
-  <RouterView/>
+  <header></header>
+  <Boy />
+  <MostPopular />
+  <RouterView />
 </template>
 
 <style scoped>
