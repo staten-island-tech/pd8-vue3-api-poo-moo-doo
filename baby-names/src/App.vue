@@ -10,15 +10,13 @@ import LeastPopular from './views/LeastPopular.vue'
 <template>
   <div id="userInput">
     <header><h1>Baby Names!</h1></header>
-    <routerLink :to="ethPath">
-      <select name="Ethnicity" id="ethnicitySelect">
-        <option disabled value="">Ethnicity</option>
-        <option>Hispanic</option>
-        <option>White non-Hispanic</option>
-        <option>Black non-Hispanic</option>
-        <option>Asian and Pacific Islander</option>
-      </select></routerLink
-    >
+    <select name="Ethnicity" id="ethnicitySelect">
+      <option disabled value="">Ethnicity</option>
+      <option>Hispanic</option>
+      <option>White non-Hispanic</option>
+      <option>Black non-Hispanic</option>
+      <option>Asian and Pacific Islander</option>
+    </select>
     <select name="Year of Birth" id="ethnicitySelect">
       <option disabled value="">Year Of Birth</option>
       <option>2019</option>
@@ -31,16 +29,19 @@ import LeastPopular from './views/LeastPopular.vue'
       <option>2012</option>
       <option>2011</option>
     </select>
-    <!-- <label class="switch">
+    <label class="switch">
       <input type="checkbox" />
       <span class="slider">boy | girl</span>
-    </label> -->
+    </label>
+    <Boy />
+    <Girl />
+    <MostPopular />
+    <LeastPopular />
   </div>
+
   <Boy />
-  <Girl />
-  <MostPopular />
-  <LeastPopular />
-  <!-- <RouterView /> -->
+  <MostPopular/>
+  <RouterView/>
 </template>
 
 <style scoped>
@@ -64,7 +65,7 @@ h1 {
   margin: 20px;
   padding: 20px;
 }
-/* .switch {
+.switch {
   text-align: center;
   position: relative;
   display: inline-block;
@@ -116,5 +117,5 @@ input:checked + .slider:before {
   -webkit-transform: translateX(38px);
   -ms-transform: translateX(38px);
   transform: translateX(38px);
-} */
+}
 </style>
