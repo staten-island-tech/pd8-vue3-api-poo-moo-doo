@@ -29,19 +29,16 @@ import LeastPopular from './views/LeastPopular.vue'
       <option>2012</option>
       <option>2011</option>
     </select>
-    <label class="switch">
+    <!-- <label class="switch">
       <input type="checkbox" />
       <span class="slider">boy | girl</span>
-    </label>
-    <Boy />
-    <Girl />
-    <MostPopular />
-    <LeastPopular />
+    </label> -->
   </div>
-
   <Boy />
-  <MostPopular/>
-  <RouterView/>
+  <Girl />
+  <MostPopular />
+  <LeastPopular />
+  <!-- <RouterView /> -->
 </template>
 
 <style scoped>
@@ -65,7 +62,7 @@ h1 {
   margin: 20px;
   padding: 20px;
 }
-.switch {
+/* .switch {
   text-align: center;
   position: relative;
   display: inline-block;
@@ -117,5 +114,5 @@ input:checked + .slider:before {
   -webkit-transform: translateX(38px);
   -ms-transform: translateX(38px);
   transform: translateX(38px);
-}
+} */
 </style>
