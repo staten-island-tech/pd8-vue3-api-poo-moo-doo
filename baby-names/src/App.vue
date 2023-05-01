@@ -6,72 +6,41 @@ import MostPopular from './views/MostPopular.vue'
 </script>
 
 <template>
-  <header></header>
+  <div id="userInput">
+    <header><h1>Baby Names!</h1></header>
+    <select name="Ethnicity" id="ethnicitySelect">
+      <option disabled value="">Ethnicity</option>
+      <option>Hispanic</option>
+      <option>White non-Hispanic</option>
+      <option>Black non-Hispanic</option>
+      <option>Asian and Pacific Islander</option>
+    </select>
+    <select name="Year of Birth" id="ethnicitySelect">
+      <option disabled value="">Year Of Birth</option>
+      <option>2019</option>
+      <option>2018</option>
+      <option>2017</option>
+      <option>2016</option>
+      <option>2015</option>
+      <option>2014</option>
+      <option>2013</option>
+      <option>2012</option>
+      <option>2011</option>
+    </select>
+  </div>
+
   <Boy />
   <MostPopular/>
   <RouterView/>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+#userInput {
+  margin: 50px;
+  font-size: 60px;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+h1 {
+  font-size: 100px;
+  color: white;
 }
 </style>
