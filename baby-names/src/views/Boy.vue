@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <h1>THE BOYS</h1>
-  </div>
+  <h1>THE BOYS</h1>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
 const babyNames = ref('')
 async function getBoys() {
-  let response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
+  let response = await fetch('https://data.cityofnewyork.us/resource/25th-nujf.json')
   let data = await response.json()
   babyNames.value = data.results
 }
