@@ -20,15 +20,17 @@ async function getBoys() {
   babyNames.value = data
   console.log(data)
 
+  const boys = data.filter((data) => data.gndr === "MALE")
+
   const ctx = document.getElementById('boysChart');
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: data.map(row => row.nm),
+      labels: boys.map(row => row.nm),
       datasets: [
         {
-          label: 'Boy Names',
-          data: data.map(row => row.brth_yr),
+          label: '# of Boys',
+          data: boys.map(row => row.cnt),
           borderWidth: 1
         }
       ]
