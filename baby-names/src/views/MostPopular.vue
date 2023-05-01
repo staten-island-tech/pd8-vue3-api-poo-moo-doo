@@ -1,5 +1,5 @@
 <template>
-  <h1>MostPopular</h1>
+  <h1>Most Popular</h1>
 </template>
 
 <!-- <script setup>
