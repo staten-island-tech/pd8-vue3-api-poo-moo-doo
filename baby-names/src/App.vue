@@ -10,13 +10,15 @@ import LeastPopular from './views/LeastPopular.vue'
 <template>
   <div id="userInput">
     <header><h1>Baby Names!</h1></header>
-    <select name="Ethnicity" id="ethnicitySelect">
-      <option disabled value="">Ethnicity</option>
-      <option>Hispanic</option>
-      <option>White non-Hispanic</option>
-      <option>Black non-Hispanic</option>
-      <option>Asian and Pacific Islander</option>
-    </select>
+    <routerLink :to="ethPath">
+      <select name="Ethnicity" id="ethnicitySelect">
+        <option disabled value="">Ethnicity</option>
+        <option>Hispanic</option>
+        <option>White non-Hispanic</option>
+        <option>Black non-Hispanic</option>
+        <option>Asian and Pacific Islander</option>
+      </select></routerLink
+    >
     <select name="Year of Birth" id="ethnicitySelect">
       <option disabled value="">Year Of Birth</option>
       <option>2019</option>
