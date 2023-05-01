@@ -1,5 +1,5 @@
 <template>
-  <div id="graph">
+  <div>
     <canvas id="boysChart"></canvas>
   </div>
   <h1>THE BOYS</h1>
@@ -46,8 +46,4 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
-#graph {
-  background-color: rgba(240, 248, 255, 0.555);
-}
-</style>
+<style lang="scss" scoped></style>
