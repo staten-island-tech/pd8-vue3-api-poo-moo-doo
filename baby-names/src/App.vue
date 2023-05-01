@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 import Boy from './views/Boy.vue'
 import Girl from './views/Girl.vue'
 import MostPopular from './views/MostPopular.vue'
@@ -29,19 +28,16 @@ import LeastPopular from './views/LeastPopular.vue'
       <option>2012</option>
       <option>2011</option>
     </select>
-    <label class="switch">
+
+    <Boy />
+    <Girl />
+    <MostPopular /><label class="switch">
       <input type="checkbox" />
       <span class="slider">boy | girl</span>
     </label>
-    <Boy />
-    <Girl />
-    <MostPopular />
     <LeastPopular />
   </div>
-
-  <Boy />
-  <MostPopular/>
-  <RouterView/>
+  <RouterView />
 </template>
 
 <style scoped>
@@ -67,8 +63,9 @@ h1 {
 }
 .switch {
   text-align: center;
-  position: relative;
+  position: absolute;
   display: inline-block;
+  right: 40px;
   margin: 50px;
   width: 180px;
   height: 76px;
@@ -101,9 +98,8 @@ h1 {
   bottom: 4px;
   background-color: white;
   -webkit-transition: 0.5s;
-  transition: 0.1s;
+  transition: 0.5s;
 }
-
 input:checked + .slider {
   content: '';
   background-color: #2196f3;
@@ -114,8 +110,8 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(38px);
-  -ms-transform: translateX(38px);
-  transform: translateX(38px);
+  -webkit-transform: translateX(86px);
+  -ms-transform: translateX(86px);
+  transform: translateX(86px);
 }
 </style>
