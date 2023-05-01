@@ -7,6 +7,12 @@ body,
   font-size: 62.5%;
 }
 body {
-  background: linear-gradient(rgb(255, 134, 154), #a2f4ff);
-  height: 100vh;
+  background-image: url('better-babies.jpg');
+  /*   background-color: rgb(221, 0, 203);
+  background-blend-mode: luminosity; 
+  
+  this is for the girls section*/
+  background-size: 100vh;
+  background-repeat: repeat-x;
+  font-family: 'Acme', sans-serif;
 }

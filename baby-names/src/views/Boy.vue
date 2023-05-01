@@ -1,7 +1,7 @@
 <template>
-    <div>
-<h1>THE BOYS</h1>
-    </div>
+  <div>
+    <h1>THE BOYS</h1>
+  </div>
 </template>
 
 <script setup>
@@ -14,10 +14,8 @@ async function getBoys() {
   babyNames.value = data.results
 }
 onMounted(() => {
-    getBoys()
+  getBoys()
 })
-
-
 </script>
 
 <style lang="scss" scoped></style>

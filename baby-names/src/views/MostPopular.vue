@@ -1,19 +1,21 @@
 <template>
-  <h1>Most Popular</h1>
+  <div>
+    <h2>Most Popular</h2>
+  </div>
 </template>
 
-<!-- <script setup>
-import{ref, onMounted} from `vue`
-const babies = ref(``)
-async function getBabies(){
-    let res = await fetch(`https://data.cityofnewyork.us/resource/25th-nujf.json`)
-    let data = await res.json()
-    babies.value = data.nm
-    console.log("hi")
-}
-onMounted(()=>{
-    getBabies()
-})
-</script> -->
+<script setup>
+import { ref, onMounted } from 'vue'
 
-<style scoped></style>
+const babies = ref('')
+async function getBabies() {
+  let res = await fetch('https://data.cityofnewyork.us/resource/25th-nujf.json')
+  let data = await res.json()
+  babies.value = data.results
+}
+onMounted(() => {
+  getBabies()
+})
+</script>
+
+<style></style>
