@@ -7,6 +7,7 @@ body,
   font-size: 62.5%;
 }
 body {
-  background: linear-gradient(rgb(255, 134, 154), #a2f4ff);
+  background-image: url('https://m.media-amazon.com/images/S/aplus-media-library-service-media/1941960a-ab4c-4eff-b8a0-b2c4ee237d97.__CR0,52,3000,1856_PT0_SX970_V1___.jpg');
+  filter: grayscale(100%);
   height: 100vh;
 }

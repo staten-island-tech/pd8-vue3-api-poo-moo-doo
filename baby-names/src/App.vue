@@ -40,7 +40,7 @@ import MostPopular from './views/MostPopular.vue'
   font-size: 60px;
 }
 h1 {
-  font-size: 100px;
+  font-size: 80px;
   color: white;
 }
 </style>
