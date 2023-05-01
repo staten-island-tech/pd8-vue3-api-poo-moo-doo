@@ -3,10 +3,15 @@ import Boy from '../views/Boy.vue'
 import Girl from '../views/Girl.vue'
 import leastPopular from '../views/LeastPopular.vue'
 import mostPopular from '../views/MostPopular.vue'
-
+import App from '../App.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/',
+      name: 'main',
+      component: App
+    },
     {
       path: '/boy',
       name: 'PopBoy',
