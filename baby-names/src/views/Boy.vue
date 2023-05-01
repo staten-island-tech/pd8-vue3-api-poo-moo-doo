@@ -12,6 +12,7 @@ async function getBoys() {
   let response = await fetch(url)
   let data = await response.json()
   babyNames.value = data.results
+  console.log(data.results)
 }
 onMounted(() => {
   getBoys()
