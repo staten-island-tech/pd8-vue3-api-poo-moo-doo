@@ -11,13 +11,14 @@ import { ref, onMounted } from 'vue'
 
 const babyNames = ref('')
 
-async function getBoys() {
+async function getGirls() {
   let response = await fetch('https://data.cityofnewyork.us/resource/25th-nujf.json')
   let data = await response.json()
   babyNames.value = data
   console.log(data)
+  
+  const girls = data.filter((data) => data.gndr === "FEMALE" && data.rnk < 11)
 
-  const girls = data.filter((data) => data.gndr === 'FEMALE')
 
   const ctx = document.getElementById('girlsChart')
   new Chart(ctx, {
@@ -26,23 +27,24 @@ async function getBoys() {
       labels: girls.map((row) => row.nm),
       datasets: [
         {
-          label: 'Count of ',
+          label: '# of Girls ',
           data: girls.map((row) => row.cnt),
-          borderWidth: 2
+          borderWidth: 1
         }
       ]
     },
     options: {
+      indexAxis: 'y',
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
         }
       }
     }
   })
 }
 onMounted(() => {
-  getBoys()
+  getGirls()
 })
 </script>
 

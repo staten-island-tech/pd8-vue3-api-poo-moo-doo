@@ -17,7 +17,7 @@ async function getBoys() {
   babyNames.value = data
   console.log(data)
 
-  const boys = data.filter((data) => data.gndr === 'MALE')
+  const boys = data.filter((data) => data.gndr === 'MALE' && data.rnk < 11)
 
   const ctx = document.getElementById('boysChart')
   new Chart(ctx, {
@@ -33,9 +33,10 @@ async function getBoys() {
       ]
     },
     options: {
+      indexAxis: 'y',
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
         }
       }
     }
