@@ -1,8 +1,8 @@
 <template>
   <div>
     <canvas id="boysChart"></canvas>
+      <h1>THE BOYS</h1>
   </div>
-  <h1>THE BOYS</h1>
 </template>
 
 <script setup>
