@@ -1,7 +1,10 @@
 <script setup></script>
 
 <template>
-  <h1>Girls~</h1>
+  <div id="graph">
+    <canvas id="girlsChart"></canvas>
+    <h1>THE GALS</h1>
+  </div>
 </template>
 
 <style>
