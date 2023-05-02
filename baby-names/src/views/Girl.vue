@@ -1,13 +1,8 @@
 <template>
   <div id="graph">
     <canvas id="girlsChart"></canvas>
-<<<<<<< HEAD
-    <h1>THE GALS</h1>
-  </div>
-=======
   </div>
   <h1>THE GALS</h1>
->>>>>>> parent of d88264c (Revert "hi we did it!!")
 </template>
 
 <script setup>

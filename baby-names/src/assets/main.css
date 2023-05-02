@@ -10,8 +10,6 @@ body {
   background-image: url('better-babies.jpg');
   background-color: rgb(182, 193, 202);
   background-blend-mode: darken;
-  background-size: 100vh;
-  background-repeat: repeat-x;
   font-family: 'Acme', sans-serif;
 }
 h1 {
