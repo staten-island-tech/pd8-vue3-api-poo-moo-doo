@@ -1,8 +1,8 @@
 <template>
   <div id="graph">
     <canvas id="girlsChart"></canvas>
+      <h1>THE GALS</h1>
   </div>
-  <h1>THE GALS</h1>
 </template>
 
 <script setup>
