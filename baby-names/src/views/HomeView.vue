@@ -1,6 +1,7 @@
 <template>
   <div id="userInput">
     <header><h1>Baby Names!</h1></header>
+    <div></div>
     <select name="Ethnicity" id="ethnicitySelect">
       <option>All</option>
       <option>Hispanic</option>
@@ -9,37 +10,42 @@
       <option>Asian and Pacific Islander</option>
     </select>
     <select name="popularity" id="ethnicitySelect">
-      <option>Most Popular</option>
-      <option>Least Popular</option>
+      <router-link to="/mostPop" custom v-slot="{ navigate }">
+        <option @click="navigate" role="link">Most Popular</option></router-link
+      >
+      <router-link to="/leastPop" custom v-slot="{ navigate }"
+        ><option @click="navigate" role="link">Least Popular</option></router-link
+      >
     </select>
     <!-- 
     <Boy />
     <Girl />
     <MostPopular /> -->
-    <router-link :to="babyPth">
+    <div>
       <label class="switch">
         <input type="checkbox" />
         <span class="slider"> boy | girl</span>
-      </label></router-link
-    >
+      </label>
+    </div>
     <!-- <LeastPopular /> -->
   </div>
-  <RouterView />
 </template>
 
 <script setup>
-import {computed} from vue
-import { RouterLink, RouterView } from 'vue-router'
-import Boy from './Boy.vue'
-import Girl from './Girl.vue'
-import MostPopular from './MostPopular.vue'
-import LeastPopular from './LeastPopular.vue'
+//import {computed} from vue
 const props = defineProps({})
-const babyPth = computer(() => {
-  return `/boy`
-})
+// const babyPth = computed(() => {
+//   return `/boy`
+// })
 </script>
+
 <style scoped>
+.test {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  font-size: 60px;
+}
 select {
   margin: 15px;
   width: 480px;
