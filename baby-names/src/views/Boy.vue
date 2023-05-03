@@ -1,7 +1,7 @@
 <template>
   <div>
+    <h1>THE BOYS</h1>
     <canvas id="boysChart"></canvas>
-      <h1>THE BOYS</h1>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ async function getBoys() {
       labels: boys.map((row) => row.nm),
       datasets: [
         {
-          label: '# of Boys',
+          label: '# of Times Used',
           data: boys.map((row) => row.cnt),
           borderWidth: 1
         }
@@ -36,7 +36,7 @@ async function getBoys() {
       indexAxis: 'y',
       scales: {
         y: {
-          beginAtZero: true,
+          beginAtZero: true
         }
       }
     }

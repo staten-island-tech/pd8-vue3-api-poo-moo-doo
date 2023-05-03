@@ -1,7 +1,7 @@
 <template>
   <div id="graph">
+    <h1>THE GALS</h1>
     <canvas id="girlsChart"></canvas>
-      <h1>THE GALS</h1>
   </div>
 </template>
 
@@ -16,18 +16,19 @@ async function getGirls() {
   let data = await response.json()
   babyNames.value = data
   console.log(data)
-  
-  const girls = data.filter((data) => data.gndr === "FEMALE" && data.rnk < 11)
 
+  const girls = data.filter((data) => data.gndr === 'FEMALE' && data.rnk < 11)
+  console.log(girls.sort())
 
   const ctx = document.getElementById('girlsChart')
+
   new Chart(ctx, {
     type: 'bar',
     data: {
       labels: girls.map((row) => row.nm),
       datasets: [
         {
-          label: '# of Girls ',
+          label: '# of Times Used',
           data: girls.map((row) => row.cnt),
           borderWidth: 1
         }
@@ -37,7 +38,7 @@ async function getGirls() {
       indexAxis: 'y',
       scales: {
         y: {
-          beginAtZero: true,
+          beginAtZero: true
         }
       }
     }
