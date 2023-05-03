@@ -1,11 +1,3 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Boy from './Boy.vue'
-import Girl from './Girl.vue'
-import MostPopular from './MostPopular.vue'
-import LeastPopular from './LeastPopular.vue'
-</script>
-
 <template>
   <div id="userInput">
     <header><h1>Baby Names!</h1></header>
@@ -35,6 +27,18 @@ import LeastPopular from './LeastPopular.vue'
   <RouterView />
 </template>
 
+<script setup>
+import {computed} from vue
+import { RouterLink, RouterView } from 'vue-router'
+import Boy from './Boy.vue'
+import Girl from './Girl.vue'
+import MostPopular from './MostPopular.vue'
+import LeastPopular from './LeastPopular.vue'
+const props = defineProps({})
+const babyPth = computer(() => {
+  return `/boy`
+})
+</script>
 <style scoped>
 select {
   margin: 15px;
