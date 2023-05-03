@@ -47,4 +47,8 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+#graph {
+  background-color: rgba(240, 248, 255, 0.555);
+}
+</style>

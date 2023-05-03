@@ -3,6 +3,7 @@
     <h1>THE GALS</h1>
     <canvas id="girlsChart"></canvas>
   </div>
+  <h1>THE GALS</h1>
 </template>
 
 <script setup>
