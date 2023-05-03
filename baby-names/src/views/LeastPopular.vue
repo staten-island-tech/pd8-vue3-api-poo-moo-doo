@@ -1,3 +1,5 @@
+<script></script>
+
 <template>
   <h1>Least Popular</h1>
   <div class="container">
@@ -24,10 +26,7 @@ export default {
   components: { Bar },
   data: () => ({
     loaded: false,
-    chartData: {
-      labels: [],
-      datasets: []
-    }
+    chartData: null
   }),
   async mounted() {
     this.loaded = false
