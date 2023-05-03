@@ -8,9 +8,11 @@ body,
 }
 body {
   background-image: url('better-babies.jpg');
-  background-color: rgb(182, 193, 202);
+  background-color: rgba(102, 106, 134, 0.2);
   background-blend-mode: darken;
   font-family: 'Acme', sans-serif;
+  font-family: 'Darumadrop One', cursive;
+  
 }
 h1 {
   font-size: 3.052rem;
