@@ -83,25 +83,6 @@ h1 {
   border: 10px solid white;
 }
 
-#info {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%;
-}
-#info:hover,
-#info:focus,
-#info:active {
-  -webkit-transform: skew(-10deg);
-  transform: skew(-10deg);
-}
 
 #info {
   margin: 20px;
