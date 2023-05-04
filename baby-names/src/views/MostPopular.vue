@@ -19,7 +19,7 @@ async function getMost() {
 
 
   const most = data.filter((data) => data.rnk < 11)
-  most.rnk.sort();
+  most.data.rnk.sort();
 
   const ctx = document.getElementById('mostChart')
   new Chart(ctx, {
