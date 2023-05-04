@@ -49,12 +49,6 @@ const props = defineProps({})
 </script>
 
 <style scoped>
-.test {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  font-size: 60px;
-}
 select {
   margin: 15px;
   width: 480px;
@@ -81,35 +75,17 @@ h1 {
   font-family: 'Darumadrop One', cursive;
   border-radius: 20px;
   border: 10px solid white;
+  box-shadow: 10px 5px 5px rgb(46, 38, 38);
 }
 
 #info {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%;
-}
-#info:hover,
-#info:focus,
-#info:active {
-  -webkit-transform: skew(-10deg);
-  transform: skew(-10deg);
-}
-
-#info {
   margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 10px;
-  
 }
 
 #welcome {
@@ -121,6 +97,7 @@ h1 {
   border-radius: 20px;
   border: 10px solid white;
   text-align: center;
+  box-shadow: 10px 5px 5px rgb(46, 38, 38);
 }
 
 #instructions {
@@ -132,6 +109,20 @@ h1 {
   border-radius: 20px;
   border: 10px solid white;
   text-align: center;
+  box-shadow: 10px 5px 5px rgb(46, 38, 38);
+}
+
+h1:hover {
+  background-color: #ffe1e6;
+  transition: all 0.5s ease-in-out;
+}
+#welcome:hover {
+  transition: all 0.5s ease-in-out;
+  background-color: rgb(194, 230, 241);
+}
+#instructions:hover {
+  transition: all 0.5s ease-in-out;
+  background-color: rgb(255, 247, 226);
 }
 .switch {
   text-align: center;
