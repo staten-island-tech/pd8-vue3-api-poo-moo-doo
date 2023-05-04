@@ -1,7 +1,7 @@
 <template>
-  <div id="graph">
+  <div>
+    <h1>THE BOYS</h1>
     <canvas id="boysChart"></canvas>
-      <h1>THE BOYS</h1>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ async function getBoys() {
   babyNames.value = data
   console.log(data)
 
-  const boys = data.filter((data) => data.gndr === 'MALE')
+  const boys = data.filter((data) => data.gndr === 'MALE' && data.rnk < 11)
 
   const ctx = document.getElementById('boysChart')
   new Chart(ctx, {
@@ -26,13 +26,14 @@ async function getBoys() {
       labels: boys.map((row) => row.nm),
       datasets: [
         {
-          label: 'Count of ',
+          label: '# of Times Used',
           data: boys.map((row) => row.cnt),
           borderWidth: 1
         }
       ]
     },
     options: {
+      indexAxis: 'y',
       scales: {
         y: {
           beginAtZero: true

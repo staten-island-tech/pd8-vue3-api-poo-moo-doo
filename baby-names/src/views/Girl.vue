@@ -1,5 +1,6 @@
 <template>
   <div id="graph">
+    <h1>THE GALS</h1>
     <canvas id="girlsChart"></canvas>
   </div>
   <h1>THE GALS</h1>
@@ -11,28 +12,31 @@ import { ref, onMounted } from 'vue'
 
 const babyNames = ref('')
 
-async function getBoys() {
+async function getGirls() {
   let response = await fetch('https://data.cityofnewyork.us/resource/25th-nujf.json')
   let data = await response.json()
   babyNames.value = data
   console.log(data)
 
-  const girls = data.filter((data) => data.gndr === 'FEMALE')
+  const girls = data.filter((data) => data.gndr === 'FEMALE' && data.rnk < 11)
+  console.log(girls.sort())
 
   const ctx = document.getElementById('girlsChart')
+
   new Chart(ctx, {
     type: 'bar',
     data: {
       labels: girls.map((row) => row.nm),
       datasets: [
         {
-          label: 'Count of ',
+          label: '# of Times Used',
           data: girls.map((row) => row.cnt),
-          borderWidth: 2
+          borderWidth: 1
         }
       ]
     },
     options: {
+      indexAxis: 'y',
       scales: {
         y: {
           beginAtZero: true
@@ -42,7 +46,7 @@ async function getBoys() {
   })
 }
 onMounted(() => {
-  getBoys()
+  getGirls()
 })
 </script>
 
