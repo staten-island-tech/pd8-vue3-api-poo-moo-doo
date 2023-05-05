@@ -22,9 +22,9 @@ export default {
   async mounted() {
     const babyApi = await fetch('https://data.cityofnewyork.us/resource/25th-nujf.json')
     const bbNames = await babyApi.json()
-    const names = bbNames.filter((name) => name.cnt)
+    const namesArr = bbNames.filter((name) => name.rnk > 80)
+    const names = namesArr.sort()
     console.log(names)
-
     this.chartData = {
       labels: names.map((row) => row.nm),
       datasets: [
