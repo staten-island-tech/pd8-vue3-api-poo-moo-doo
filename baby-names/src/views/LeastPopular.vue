@@ -1,40 +1,44 @@
 <template>
-  <h1>Least Popular</h1>
-  <div class="container">
-    <Bar v-if="loaded" :data="chartData" />
+  <h1>Least Popular:</h1>
+  <div>
+    <Bar id="my-chart-id" v-if="loaded" :options="chartOptions" :data="chartData" />
   </div>
 </template>
 
 <script>
 import { Bar } from 'vue-chartjs'
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale
-} from 'chart.js'
-
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
-
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+ChartJS.register(ArcElement, Tooltip, Legend)
 export default {
-  name: 'BarChart',
+  name: 'BabyChart',
   components: { Bar },
-  data: () => ({
-    loaded: false,
-    chartData: null
-  }),
-  async mounted() {
-    this.loaded = false
-    try {
-      const { babies } = await fetch('https://data.cityofnewyork.us/resource/25th-nujf.json')
-      this.chartdata = babies
-      this.loaded = true
-    } catch (e) {
-      console.error(e)
+  data() {
+    return {
+      chartData: null,
+      chartOptions: null,
+      loaded: false
     }
+  },
+  async mounted() {
+    const babyApi = await fetch('https://data.cityofnewyork.us/resource/25th-nujf.json')
+    const bbNames = await babyApi.json()
+    const names = bbNames.filter((name) => name.cnt)
+    console.log(names)
+
+    this.chartData = {
+      labels: names.map((row) => row.nm),
+      datasets: [
+        {
+          label: 'Count',
+          data: names.map((row) => row.cnt),
+          borderWidth: 1
+        }
+      ]
+    }
+    this.chartOptions = {
+      responsive: true
+    }
+    this.loaded = true
   }
 }
 </script>
