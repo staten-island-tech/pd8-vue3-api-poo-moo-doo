@@ -3,10 +3,19 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
+  <button>hi!</button>
   <RouterView />
 </template>
 
 <style scoped>
+button {
+  background-color: rgb(102, 97, 253);
+  left: 100px;
+  top: 60px;
+  width: 60px;
+  height: 30px;
+  position: fixed;
+}
 h1 {
   background-color: rgba(250, 141, 159, 0.808);
   width: fit-content;
