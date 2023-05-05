@@ -1,5 +1,5 @@
 <template>
-  <h1>Least Popular</h1>
+  <h1>Least Popular:</h1>
   <div>
     <Bar id="my-chart-id" v-if="loaded" :options="chartOptions" :data="chartData" />
   </div>
@@ -10,7 +10,7 @@ import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 ChartJS.register(ArcElement, Tooltip, Legend)
 export default {
-  name: 'satisfactionChart',
+  name: 'BabyChart',
   components: { Bar },
   data() {
     return {
@@ -24,13 +24,13 @@ export default {
     const bbNames = await babyApi.json()
     const names = bbNames.filter((name) => name.cnt)
     console.log(names)
-    let x = [names]
+
     this.chartData = {
-      labels: data.map((row) => row.nm),
+      labels: names.map((row) => row.nm),
       datasets: [
         {
-          label: 'Boy Names',
-          data: data.map((row) => row.brth_yr),
+          label: 'Count',
+          data: names.map((row) => row.cnt),
           borderWidth: 1
         }
       ]

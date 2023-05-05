@@ -17,9 +17,8 @@ async function getMost() {
   babyNames.value = data
   console.log(data)
 
-
   const most = data.filter((data) => data.rnk < 11)
-  most.rnk.sort();
+  most.rnk.sort()
 
   const ctx = document.getElementById('mostChart')
   new Chart(ctx, {
