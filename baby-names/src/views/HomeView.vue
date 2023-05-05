@@ -11,7 +11,6 @@
         Simply use your mouse (P.S. computer mouse not the rodent) and click the dropdowns.
       </h3>
     </div>
-
     <select name="popularity" id="ethnicitySelect">
       <router-link to="/mostPop" custom v-slot="{ navigate }">
         <option @click="navigate" role="link">Most Popular</option></router-link
@@ -24,12 +23,13 @@
     <Boy />
     <Girl />
     <MostPopular /> -->
-    <div>
+    <router-link to="/mostPop" custom v-slot="{ navigate }"
+      >>
       <label class="switch">
         <input type="checkbox" />
         <span class="slider"> boy | girl</span>
       </label>
-    </div>
+    </router-link>
     <!-- <LeastPopular /> -->
   </div>
 </template>
