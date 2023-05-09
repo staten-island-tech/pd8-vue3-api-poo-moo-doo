@@ -1,7 +1,7 @@
 <template>
   <h1>Least Popular:</h1>
   <div>
-    <Bar id="chart" v-if="loaded" :options="chartOptions" :data="chartData" />
+    <Bar id="my-chart-id" v-if="loaded" :options="chartOptions" :data="chartData" />
   </div>
 </template>
 
@@ -43,9 +43,4 @@ export default {
 }
 </script>
 
-<style scoped>
-#chart {
-  margin: 50px;
-  size: 300px;
-}
-</style>
+<style scoped></style>
