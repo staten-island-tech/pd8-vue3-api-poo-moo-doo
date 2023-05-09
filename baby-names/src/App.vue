@@ -3,7 +3,10 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <button>hi!</button>
+  <router-link to="/" custom v-slot="{ navigate }">
+    <button @click="navigate" role="link">back</button></router-link
+  >
+
   <RouterView />
 </template>
 

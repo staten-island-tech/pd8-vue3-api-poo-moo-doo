@@ -11,12 +11,22 @@
         Simply use your mouse (P.S. computer mouse not the rodent) and click the dropdowns.
       </h3>
     </div>
-    <select name="popularity" id="ethnicitySelect">
+    <select name="popularity" id="popSelect">
       <router-link to="/mostPop" custom v-slot="{ navigate }">
         <option @click="navigate" role="link">Most Popular</option></router-link
       >
       <router-link to="/leastPop" custom v-slot="{ navigate }"
         ><option @click="navigate" role="link">Least Popular</option></router-link
+      >
+    </select>
+
+    <select name="gender" id="gndrSelect">
+      <router-link to="/girl" custom v-slot="{ navigate }"
+        >>
+        <option @click="navigate" role="link">GIRLS</option></router-link
+      >
+      <router-link to="/boy" custom v-slot="{ navigate }"
+        ><option @click="navigate" role="link">BOY</option></router-link
       >
     </select>
     <!-- 

@@ -1,7 +1,7 @@
 <template>
-  <h1>Most Popular Boy Names</h1>
-  <div>
-    <Bar id="my-chart-id" v-if="loaded" :options="chartOptions" :data="chartData" />
+  <div id="graph">
+    <h1>THE BOYS</h1>
+    <canvas id="boysChart"></canvas>
   </div>
 </template>
 
