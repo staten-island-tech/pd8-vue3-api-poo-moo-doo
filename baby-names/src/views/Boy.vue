@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="graph">
     <h1>THE BOYS</h1>
     <canvas id="boysChart"></canvas>
   </div>
