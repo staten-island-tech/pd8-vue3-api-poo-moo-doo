@@ -6,13 +6,7 @@ import { RouterLink, RouterView } from 'vue-router'
   <router-link to="/" custom v-slot="{ navigate }">
     <button @click="navigate" role="link">back</button></router-link
   >
-  <router-link to="/girl" custom v-slot="{ navigate }"
-    >>
-    <label class="switch">
-      <input @click="navigate" role="link" type="checkbox" />
-      <span class="slider"> boy | girl</span>
-    </label>
-  </router-link>
+
   <RouterView />
 </template>
 

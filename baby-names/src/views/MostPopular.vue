@@ -1,51 +1,51 @@
 <template>
+  <h1>Most Popular:</h1>
   <div>
-    <h1>Most Popular</h1>
-    <canvas id="mostChart"></canvas>
+    <Bar id="chart" v-if="loaded" :options="chartOptions" :data="chartData" />
   </div>
 </template>
 
-<script setup>
-import Chart from 'chart.js/auto'
-import { ref, onMounted } from 'vue'
-
-const babyNames = ref('')
-
-async function getMost() {
-  let response = await fetch('https://data.cityofnewyork.us/resource/25th-nujf.json')
-  let data = await response.json()
-  babyNames.value = data
-  console.log(data)
-
-  const most = data.filter((data) => data.rnk < 11)
-  most.rnk.sort()
-
-  const ctx = document.getElementById('mostChart')
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: most.map((row) => row.nm),
+<script>
+import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+ChartJS.register(ArcElement, Tooltip, Legend)
+export default {
+  name: 'BabyChart',
+  components: { Bar },
+  data() {
+    return {
+      chartData: null,
+      chartOptions: null,
+      loaded: false
+    }
+  },
+  async mounted() {
+    const babyApi = await fetch('https://data.cityofnewyork.us/resource/25th-nujf.json')
+    const bbNames = await babyApi.json()
+    const namesArr = bbNames.filter((name) => name.rnk < 11)
+    const names = namesArr.sort()
+    console.log(names)
+    this.chartData = {
+      labels: names.map((row) => row.nm),
       datasets: [
         {
-          label: '# of Times Used',
-          data: most.map((row) => row.cnt),
+          label: 'Count',
+          data: names.map((row) => row.cnt),
           borderWidth: 1
         }
       ]
-    },
-    options: {
-      indexAxis: 'y',
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
     }
-  })
+    this.chartOptions = {
+      responsive: true
+    }
+    this.loaded = true
+  }
 }
-onMounted(() => {
-  getMost()
-})
 </script>
 
-<style></style>
+<style scoped>
+#chart {
+  margin: 50px;
+  size: 300px;
+}
+</style>
