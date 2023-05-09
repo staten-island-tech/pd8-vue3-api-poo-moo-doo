@@ -56,6 +56,7 @@ select {
   border: 10px solid white;
   border-radius: 10px;
   display: flex;
+  cursor: pointer;
 }
 #userInput {
   margin: 50px;
