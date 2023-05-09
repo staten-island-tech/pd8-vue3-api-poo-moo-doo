@@ -26,7 +26,7 @@
         <option @click="navigate" role="link">GIRLS</option></router-link
       >
       <router-link to="/boy" custom v-slot="{ navigate }"
-        ><option @click="navigate" role="link">BOY</option></router-link
+        ><option @click="navigate" role="link">BOYS</option></router-link
       >
     </select>
     <!-- 
