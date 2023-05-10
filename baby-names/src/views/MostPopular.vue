@@ -45,7 +45,8 @@ export default {
 
 <style scoped>
 #chart {
-  margin: 50px;
-  size: 300px;
+  position: relative;
+  height: 40vh;
+  width: 80vw;
 }
 </style>

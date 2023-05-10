@@ -4,10 +4,8 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <router-link to="/" custom v-slot="{ navigate }">
-    <button @click="navigate" role="link">Back</button></router-link
+    <RouterView /><button @click="navigate" role="link">back</button></router-link
   >
-
-  <RouterView />
 </template>
 
 <style scoped>
